@@ -4,7 +4,7 @@
         "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.hsweb.web.dao.role.RoleModuleMapper">
-    <resultMap id="RoleModuleResultMap" type="RoleModule" >
+    <resultMap id="RoleModuleResultMap" type="org.hsweb.web.bean.po.role.RoleModule" >
         <id property="id" column="u_id" javaType="string" jdbcType="VARCHAR" />
         <result property="moduleId" column="module_id" javaType="String" jdbcType="VARCHAR" />
         <result property="roleId" column="role_id" javaType="String" jdbcType="VARCHAR" />
@@ -19,7 +19,7 @@
         <bind name="tableName" value="'s_role_modules'"/>
     </sql>
 
-    <insert id="insert" parameterType="RoleModule">
+    <insert id="insert" parameterType="org.hsweb.web.bean.common.InsertParam">
         <include refid="config"/>
         <include refid="BasicMapper.buildInsertSql"/>
     </insert>
